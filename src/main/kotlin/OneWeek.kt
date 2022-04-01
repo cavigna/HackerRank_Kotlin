@@ -89,21 +89,75 @@ fun timeConversion(s: String = "07:05:45PM"): String {
 fun lonelyinteger(a: Array<Int> = arrayOf(1, 2, 3, 4, 3, 2, 1)): Int {
 
 
-    return a.groupingBy { it }.eachCount().filterValues { it ==1 }.keys.first()
+    return a.groupingBy { it }.eachCount().filterValues { it == 1 }.keys.first()
 
 }
 
-fun lonelyintegersss(a: Array<Int> = arrayOf(1, 2, 3, 4, 3, 2, 1)): Int {
+fun diagonalDifference(arr: Array<Array<Int>>): Int {
+   // println(arr.contentDeepToString())
 
-    val mapa = a.groupingBy { it }.eachCount()
-    println(mapa.toString())
-    mapa.filterValues { it==1 }.keys
-    println(mapa.filterValues { it==1 }.keys.first())
-    return 0
+    //import kotlin.math.abs
+    var m = 0
+    var n = 0
+    var k = 0
+    var l = arr.size -1
+    var suma1 = 0
+    var suma2 = 0
+
+    for (i in 0 until arr.size){
+        suma1 += arr[m][n]
+        m +=1
+        n +=1
+
+        suma2 += arr[k][l]
+        k +=1
+        l -=1
+    }
+    //println(abs(suma1-suma2))
+
+    return abs(suma1-suma2)
 
 }
 
 fun main() {
-    lonelyinteger()
+
+
+    diagonalDifference(
+        arrayOf(
+            arrayOf(1, 2, 3),
+            arrayOf(4, 5, 6),
+            arrayOf(9, 8, 9)
+        )
+    )
 }
 
+
+fun diagonalDifferencessss(arr: Array<Array<Int>>): Int {
+    println(arr.contentDeepToString())
+
+    //import kotlin.math.abs
+    var m = 0
+    var n = 0
+    var k = 0
+    var l = arr.size -1
+    var suma1 = 0
+    var suma2 = 0
+
+    for (i in 0 until 3){
+        suma1 += arr[m][n]
+        m +=1
+        n +=1
+
+        suma2 += arr[k][l]
+        k +=1
+        l -=1
+    }
+
+
+    println(suma1)
+    println(suma2)
+    println(abs(suma1-suma2))
+
+    return abs(suma1-suma2)
+
+}
