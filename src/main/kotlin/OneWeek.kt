@@ -187,6 +187,7 @@ z -> b
 fun caesarCipher(s: String = "middle-Outz", k: Int = 2): String {
 
 
+
     val listaMutable = mutableListOf<String>()
 
     s.forEach {
@@ -216,6 +217,8 @@ fun caesarCipher(s: String = "middle-Outz", k: Int = 2): String {
 fun main() {
     caesarCipher()
     caesarCipher("There's-a-starman-waiting-in-the-sky", 8)
+    println('z'.code %26)
+    println((97 +('z'.code +99 - 97+99)%26).toChar())
 
 
 
